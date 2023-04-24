@@ -1,6 +1,8 @@
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
 # Titel und Logo für dieses Theme
 title: Altstadtrundgang Frauenfeld
 logo: ./logo.jpeg
