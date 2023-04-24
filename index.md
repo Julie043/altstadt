@@ -2,7 +2,7 @@
 
 <iframe src="asr.html" height="500" width="500"></iframe>
 
-
+<a href="https://jpmou.github.io/Altstadtrundgang/index.html#schloss-frauenfeld" target="_parent">mehr Info</a>
 
 
 
