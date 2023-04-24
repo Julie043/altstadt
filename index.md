@@ -1,6 +1,6 @@
 ## Map
 
-<iframe asr="map.html" height="500" width="500"></iframe>
+<iframe src="asr.html" height="500" width="500"></iframe>
 
 
 ## Beschreibung des Rundganges
