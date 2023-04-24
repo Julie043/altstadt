@@ -1,6 +1,7 @@
 ## Map
-<a href="https://jpmou.github.io/Altstadtrundgang/index.html#schloss-frauenfeld" target="_parent">mehr Info</a>
 
+<head><base href="http://192.168.200.54/user/1046583/files/Maps/asr.html?_xsrf=2%7Ca7574149%7C3e121b9a2b365c54f1b4db65b991e3a5%7C1682335049" target="_self">
+    
 
 
 ## Beschreibung des Rundganges
