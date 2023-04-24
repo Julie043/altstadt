@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_44aa42c90a4ed6283769da3b3d6054b8 {
+                    position: relative;
+                    width: 1000.0px;
+                    height: 800.0px;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/marslan390/BeautifyMarker/leaflet-beautify-marker-icon.min.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_44aa42c90a4ed6283769da3b3d6054b8" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_44aa42c90a4ed6283769da3b3d6054b8 = L.map(
+                "map_44aa42c90a4ed6283769da3b3d6054b8",
+                {
+                    center: [47.556651968080324, 8.898605422402134],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 17,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_44aa42c90a4ed6283769da3b3d6054b8);
+
+            
+
+        
+    
+            var tile_layer_9edfc30547fccfcb3f195a92e923f92a = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 17, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_44aa42c90a4ed6283769da3b3d6054b8);
+        
+    
+            var tile_layer_dfbc0128b07888c2211e26435a6ae8bc = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_bfc42e7e72e3e5d8e8384d18a57dc839 = new L.Control.MiniMap(
+                tile_layer_dfbc0128b07888c2211e26435a6ae8bc,
+                {"autoToggleDisplay": false, "centerFixed": false, "collapsedHeight": 25, "collapsedWidth": 25, "height": 150, "minimized": false, "position": "bottomright", "toggleDisplay": false, "width": 150, "zoomAnimation": false, "zoomLevelOffset": -5}
+            );
+            map_44aa42c90a4ed6283769da3b3d6054b8.addControl(mini_map_bfc42e7e72e3e5d8e8384d18a57dc839);
+        
+    
+            var marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f = L.markerClusterGroup(
+                {}
+            );
+            map_44aa42c90a4ed6283769da3b3d6054b8.addLayer(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var marker_e5f838202df668384d0071ac3dcbc78e = L.marker(
+                [47.55521784594051, 8.896713514687608],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_11cbe96c019741b2c9061a6f4e6f3bb6 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 1, "textColor": "white"}
+            )
+            marker_e5f838202df668384d0071ac3dcbc78e.setIcon(beautify_icon_11cbe96c019741b2c9061a6f4e6f3bb6);
+        
+    
+            marker_e5f838202df668384d0071ac3dcbc78e.bindTooltip(
+                `<div>
+                     Schloss
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_264b6f5cd9ad32cad9f5ec925bd7f0f7 = L.marker(
+                [47.555907015942154, 8.895884766301453],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_103da345406efce0815a6c6e16ab0105 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 3, "textColor": "white"}
+            )
+            marker_264b6f5cd9ad32cad9f5ec925bd7f0f7.setIcon(beautify_icon_103da345406efce0815a6c6e16ab0105);
+        
+    
+            marker_264b6f5cd9ad32cad9f5ec925bd7f0f7.bindTooltip(
+                `<div>
+                     Post
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e154870a1191f21220ddb0f2d6784ccf = L.marker(
+                [47.55536034970923, 8.897392167760696],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_d6b8e39938df194ede8db3212a2fb9a4 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 4, "textColor": "white"}
+            )
+            marker_e154870a1191f21220ddb0f2d6784ccf.setIcon(beautify_icon_d6b8e39938df194ede8db3212a2fb9a4);
+        
+    
+            marker_e154870a1191f21220ddb0f2d6784ccf.bindTooltip(
+                `<div>
+                     Rathaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dca778185ab6eaae7d0e8efedd90f66f = L.marker(
+                [47.5553331972642, 8.897711350621847],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_53660ae499738e3288f8829290b1fc0d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 5, "textColor": "white"}
+            )
+            marker_dca778185ab6eaae7d0e8efedd90f66f.setIcon(beautify_icon_53660ae499738e3288f8829290b1fc0d);
+        
+    
+            marker_dca778185ab6eaae7d0e8efedd90f66f.bindTooltip(
+                `<div>
+                     Alte Sonne
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_92bf12de3c2e9aff1f1393e0e173660b = L.marker(
+                [47.555315095626376, 8.89784546106771],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_bac37a4e773dacf297604852464654e2 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 6, "textColor": "white"}
+            )
+            marker_92bf12de3c2e9aff1f1393e0e173660b.setIcon(beautify_icon_bac37a4e773dacf297604852464654e2);
+        
+    
+            marker_92bf12de3c2e9aff1f1393e0e173660b.bindTooltip(
+                `<div>
+                     Gambrinus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_22b061eace9308866c83f2b67c462db1 = L.marker(
+                [47.55574953320852, 8.897558464713564],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_0ac7f5765dba475d3f586c6fb6bd5808 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 7, "textColor": "white"}
+            )
+            marker_22b061eace9308866c83f2b67c462db1.setIcon(beautify_icon_0ac7f5765dba475d3f586c6fb6bd5808);
+        
+    
+            marker_22b061eace9308866c83f2b67c462db1.bindTooltip(
+                `<div>
+                     Haus zum Licht
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_a22a92109c32f7bd8e03f6f49d354a87 = L.marker(
+                [47.55570970991344, 8.898102953123765],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_c30090d585ad2d210e16066fed2fd679 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 8, "textColor": "white"}
+            )
+            marker_a22a92109c32f7bd8e03f6f49d354a87.setIcon(beautify_icon_c30090d585ad2d210e16066fed2fd679);
+        
+    
+            marker_a22a92109c32f7bd8e03f6f49d354a87.bindTooltip(
+                `<div>
+                     Mädchenschule
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_97c3319c5328c67576bed5533caea22d = L.marker(
+                [47.55588891450298, 8.898035897900835],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_cd1e18482477033095a2c55d7675cf29 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 9, "textColor": "white"}
+            )
+            marker_97c3319c5328c67576bed5533caea22d.setIcon(beautify_icon_cd1e18482477033095a2c55d7675cf29);
+        
+    
+            marker_97c3319c5328c67576bed5533caea22d.bindTooltip(
+                `<div>
+                     Schwert
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b8f8779a4f78c546ce70ed62bb6c5af = L.marker(
+                [47.55633074405879, 8.898272111125543],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_7a228d1dba86fe7a28d8a53313b4eddc = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 11, "textColor": "white"}
+            )
+            marker_4b8f8779a4f78c546ce70ed62bb6c5af.setIcon(beautify_icon_7a228d1dba86fe7a28d8a53313b4eddc);
+        
+    
+            marker_4b8f8779a4f78c546ce70ed62bb6c5af.bindTooltip(
+                `<div>
+                     Evangelsiche Sadtkirche zur Dreifaltigkeit
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fc63fbd1b48d8d70cb4f0d33a716530c = L.marker(
+                [47.55660472692498, 8.898642006555061],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_be905c900cff373919fd181b7abfe70d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 13, "textColor": "white"}
+            )
+            marker_fc63fbd1b48d8d70cb4f0d33a716530c.setIcon(beautify_icon_be905c900cff373919fd181b7abfe70d);
+        
+    
+            marker_fc63fbd1b48d8d70cb4f0d33a716530c.bindTooltip(
+                `<div>
+                     Luzerner haus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dcb6f9aee922fde673d98b9170eed046 = L.marker(
+                [47.556679310900705, 8.898786355986326],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_266953b2776bfe761e9c4d89599ac4e8 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 14, "textColor": "white"}
+            )
+            marker_dcb6f9aee922fde673d98b9170eed046.setIcon(beautify_icon_266953b2776bfe761e9c4d89599ac4e8);
+        
+    
+            marker_dcb6f9aee922fde673d98b9170eed046.bindTooltip(
+                `<div>
+                     Gachnangerstock
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_c6f88deaabf75825418408fc05e38bb7 = L.marker(
+                [47.55690306219599, 8.898741246789543],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_41bff511166229758d7eb7d0471ce0e1 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 15, "textColor": "white"}
+            )
+            marker_c6f88deaabf75825418408fc05e38bb7.setIcon(beautify_icon_41bff511166229758d7eb7d0471ce0e1);
+        
+    
+            marker_c6f88deaabf75825418408fc05e38bb7.bindTooltip(
+                `<div>
+                     Bernerhaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_5d22dc46ed9f6137e0b07a5a21e3ee56 = L.marker(
+                [47.556976123634854, 8.898601408278008],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_68ba7c8368e90395bb1815be7c9e5821 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 16, "textColor": "white"}
+            )
+            marker_5d22dc46ed9f6137e0b07a5a21e3ee56.setIcon(beautify_icon_68ba7c8368e90395bb1815be7c9e5821);
+        
+    
+            marker_5d22dc46ed9f6137e0b07a5a21e3ee56.bindTooltip(
+                `<div>
+                     Zur Palme
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_eeae46eaf56b7dcce51cad4ced75e2f2 = L.marker(
+                [47.557103980907684, 8.898470591605927],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_d97734b51a71e98ffc0e52ec36f96396 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 17, "textColor": "white"}
+            )
+            marker_eeae46eaf56b7dcce51cad4ced75e2f2.setIcon(beautify_icon_d97734b51a71e98ffc0e52ec36f96396);
+        
+    
+            marker_eeae46eaf56b7dcce51cad4ced75e2f2.bindTooltip(
+                `<div>
+                     Zur Krone
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3c4808b786103f2aca544baa731409e5 = L.marker(
+                [47.55688631893803, 8.898109718040569],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_b5bec88b8334eb9e2ae347c20cdeb4a1 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 18, "textColor": "white"}
+            )
+            marker_3c4808b786103f2aca544baa731409e5.setIcon(beautify_icon_b5bec88b8334eb9e2ae347c20cdeb4a1);
+        
+    
+            marker_3c4808b786103f2aca544baa731409e5.bindTooltip(
+                `<div>
+                     Redinghaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cb1aba30cfc5456fb0a2cc61980a3f39 = L.marker(
+                [47.55718534391407, 8.898021292478214],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_a3ce5ac6eb0978ca4ed8fbd15b95a376 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 20, "textColor": "white"}
+            )
+            marker_cb1aba30cfc5456fb0a2cc61980a3f39.setIcon(beautify_icon_a3ce5ac6eb0978ca4ed8fbd15b95a376);
+        
+    
+            marker_cb1aba30cfc5456fb0a2cc61980a3f39.bindTooltip(
+                `<div>
+                     Stadtkirche St. Nikolaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3bbfccd15d64a0bcc6943f0a6e46636e = L.marker(
+                [47.5569852563087, 8.897676669735546],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_62af13d5d18c2e13ceead518126a5e17 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 21, "textColor": "white"}
+            )
+            marker_3bbfccd15d64a0bcc6943f0a6e46636e.setIcon(beautify_icon_62af13d5d18c2e13ceead518126a5e17);
+        
+    
+            marker_3bbfccd15d64a0bcc6943f0a6e46636e.bindTooltip(
+                `<div>
+                     Ehemaliges Gasthaus zum Hirschen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_8983fa664b2cd71216c401958e5e3511 = L.marker(
+                [47.556845221819145, 8.897572918581826],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_240541ae4f708e6ed2bbe84875fabaa3 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 22, "textColor": "white"}
+            )
+            marker_8983fa664b2cd71216c401958e5e3511.setIcon(beautify_icon_240541ae4f708e6ed2bbe84875fabaa3);
+        
+    
+            marker_8983fa664b2cd71216c401958e5e3511.bindTooltip(
+                `<div>
+                     Zürcherhaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_56c5b3801d2a93602a7c1eb3ce8a9fde = L.marker(
+                [47.55670062059482, 8.897541342143738],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_9fbecb95f9f76d68537413ad9fb9ab7c = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 23, "textColor": "white"}
+            )
+            marker_56c5b3801d2a93602a7c1eb3ce8a9fde.setIcon(beautify_icon_9fbecb95f9f76d68537413ad9fb9ab7c);
+        
+    
+            marker_56c5b3801d2a93602a7c1eb3ce8a9fde.bindTooltip(
+                `<div>
+                     Rüpplinsche Kaplanei
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fad7dd2c4ccedbb32d46548a63b3efe7 = L.marker(
+                [47.556335310451196, 8.897216555908356],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_dc26ce2e827814824793d4e8a6747239 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 24, "textColor": "white"}
+            )
+            marker_fad7dd2c4ccedbb32d46548a63b3efe7.setIcon(beautify_icon_dc26ce2e827814824793d4e8a6747239);
+        
+    
+            marker_fad7dd2c4ccedbb32d46548a63b3efe7.bindTooltip(
+                `<div>
+                     Goldener Adler
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_224b8b62e5c1b7c46843c35a6dd9fc72 = L.marker(
+                [47.55454930734682, 8.894197066162139],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_d8e5fe3dc263930ce49ae10f30d28eab = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 27, "textColor": "white"}
+            )
+            marker_224b8b62e5c1b7c46843c35a6dd9fc72.setIcon(beautify_icon_d8e5fe3dc263930ce49ae10f30d28eab);
+        
+    
+            marker_224b8b62e5c1b7c46843c35a6dd9fc72.bindTooltip(
+                `<div>
+                     Baliere
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e16114dce4c3e9f30a3f21f6b09a9208 = L.marker(
+                [47.55941303397862, 8.900461425299763],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_cdfa0039ea38b3799fdf7d9b3e2d0114 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 28, "textColor": "white"}
+            )
+            marker_e16114dce4c3e9f30a3f21f6b09a9208.setIcon(beautify_icon_cdfa0039ea38b3799fdf7d9b3e2d0114);
+        
+    
+            marker_e16114dce4c3e9f30a3f21f6b09a9208.bindTooltip(
+                `<div>
+                     Staatsarchiv und altes Zeughaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_78cd1e63a8980c7bf88b2debe22912dc = L.marker(
+                [47.55581861872063, 8.899117588090132],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_1136953ad632bb3ea1e919877536b87d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 29, "textColor": "white"}
+            )
+            marker_78cd1e63a8980c7bf88b2debe22912dc.setIcon(beautify_icon_1136953ad632bb3ea1e919877536b87d);
+        
+    
+            marker_78cd1e63a8980c7bf88b2debe22912dc.bindTooltip(
+                `<div>
+                     Verwaltungsgebäude
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_4b3f5e9bc1289d008a0628cd28552053 = L.marker(
+                [47.556182410321334, 8.899318324017981],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_b7b75cfa0e33422359cb3e684802cd7b = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 30, "textColor": "white"}
+            )
+            marker_4b3f5e9bc1289d008a0628cd28552053.setIcon(beautify_icon_b7b75cfa0e33422359cb3e684802cd7b);
+        
+    
+            marker_4b3f5e9bc1289d008a0628cd28552053.bindTooltip(
+                `<div>
+                     Kantonsbibliothek
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_abb11820833165ba7e68830f101b9fe8 = L.marker(
+                [47.55568010325435, 8.90071670916667],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_1a8811e976095deff61a829744857d36 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 31, "textColor": "white"}
+            )
+            marker_abb11820833165ba7e68830f101b9fe8.setIcon(beautify_icon_1a8811e976095deff61a829744857d36);
+        
+    
+            marker_abb11820833165ba7e68830f101b9fe8.bindTooltip(
+                `<div>
+                     Botanischer Garten
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_7301ed148b6916a42514d444bb17616f = L.marker(
+                [47.556751685845626, 8.899555147313743],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_80a9e9ab5e52ed9e2652904a65d07a36 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 32, "textColor": "white"}
+            )
+            marker_7301ed148b6916a42514d444bb17616f.setIcon(beautify_icon_80a9e9ab5e52ed9e2652904a65d07a36);
+        
+    
+            marker_7301ed148b6916a42514d444bb17616f.bindTooltip(
+                `<div>
+                     ehemals Tgurgauer Zeitung
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_edf902117ca138128ccc977f0f6a599a = L.marker(
+                [47.55723876159177, 8.899507782651927],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_317fea1561ea877545032684d62d25c6 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 33, "textColor": "white"}
+            )
+            marker_edf902117ca138128ccc977f0f6a599a.setIcon(beautify_icon_317fea1561ea877545032684d62d25c6);
+        
+    
+            marker_edf902117ca138128ccc977f0f6a599a.bindTooltip(
+                `<div>
+                     Regierungsgebäude
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_fdde91bf17f694fd026c527ed4865fac = L.marker(
+                [47.56002398152654, 8.903439096466961],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_8a632d540588b2cde2b0eb941d3ab88d = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 34, "textColor": "white"}
+            )
+            marker_fdde91bf17f694fd026c527ed4865fac.setIcon(beautify_icon_8a632d540588b2cde2b0eb941d3ab88d);
+        
+    
+            marker_fdde91bf17f694fd026c527ed4865fac.bindTooltip(
+                `<div>
+                     Guggenhüürli
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e8c563962e9a436869afbf1a2de0629f = L.marker(
+                [47.55503920086816, 8.90316676983172],
+                {}
+            ).addTo(marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f);
+        
+    
+            var beautify_icon_5ebaec2358ff749522c9378fbc671724 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "green", "borderColor": "green", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 35, "textColor": "white"}
+            )
+            marker_e8c563962e9a436869afbf1a2de0629f.setIcon(beautify_icon_5ebaec2358ff749522c9378fbc671724);
+        
+    
+            marker_e8c563962e9a436869afbf1a2de0629f.bindTooltip(
+                `<div>
+                     Kantonsschule Frauenfeld
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cluster_1561ac23a305aa8e4837fb7909a943cc = L.markerClusterGroup(
+                {}
+            );
+            map_44aa42c90a4ed6283769da3b3d6054b8.addLayer(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var marker_19998a853ac66e8501d340ab75ac1ff3 = L.marker(
+                [47.55559988315024, 8.897262444997457],
+                {}
+            ).addTo(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var beautify_icon_06af9d328a18c55c18f5cdfcc2d224dc = new L.BeautifyIcon.icon(
+                {"backgroundColor": "blue", "borderColor": "blue", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 2, "textColor": "white"}
+            )
+            marker_19998a853ac66e8501d340ab75ac1ff3.setIcon(beautify_icon_06af9d328a18c55c18f5cdfcc2d224dc);
+        
+    
+            marker_19998a853ac66e8501d340ab75ac1ff3.bindTooltip(
+                `<div>
+                     Sämannsbrunnen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e66a2ba55a4ce5042811c5e888476e8c = L.marker(
+                [47.555968560790475, 8.898229016942874],
+                {}
+            ).addTo(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var beautify_icon_c48768b5e7938be2ad9dea40e51fbe81 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "blue", "borderColor": "blue", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 10, "textColor": "white"}
+            )
+            marker_e66a2ba55a4ce5042811c5e888476e8c.setIcon(beautify_icon_c48768b5e7938be2ad9dea40e51fbe81);
+        
+    
+            marker_e66a2ba55a4ce5042811c5e888476e8c.bindTooltip(
+                `<div>
+                     Brunnen im Sauren Winkel
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_ecbe5bb9d97ba5a45de155e8a6149fdc = L.marker(
+                [47.55642816035524, 8.898470591605438],
+                {}
+            ).addTo(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var beautify_icon_ba99bd76392fd6ec248e82da840b9e32 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "blue", "borderColor": "blue", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 12, "textColor": "white"}
+            )
+            marker_ecbe5bb9d97ba5a45de155e8a6149fdc.setIcon(beautify_icon_ba99bd76392fd6ec248e82da840b9e32);
+        
+    
+            marker_ecbe5bb9d97ba5a45de155e8a6149fdc.bindTooltip(
+                `<div>
+                     Brunnen Freiestrasse
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_d6835d942b68fb1e5e7e52f7f9ceb920 = L.marker(
+                [47.55695329194892, 8.898278877530329],
+                {}
+            ).addTo(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var beautify_icon_c0b9277585648b15abd6b6278f7dfba7 = new L.BeautifyIcon.icon(
+                {"backgroundColor": "blue", "borderColor": "blue", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 19, "textColor": "white"}
+            )
+            marker_d6835d942b68fb1e5e7e52f7f9ceb920.setIcon(beautify_icon_c0b9277585648b15abd6b6278f7dfba7);
+        
+    
+            marker_d6835d942b68fb1e5e7e52f7f9ceb920.bindTooltip(
+                `<div>
+                     Brunnen beim Redinghaus
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_834a408cd88976e8f94aab87742e9ec2 = L.marker(
+                [47.556211665791594, 8.897479733146465],
+                {}
+            ).addTo(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var beautify_icon_63f73d8609d824f82ebb4e4c20c0822f = new L.BeautifyIcon.icon(
+                {"backgroundColor": "blue", "borderColor": "blue", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 25, "textColor": "white"}
+            )
+            marker_834a408cd88976e8f94aab87742e9ec2.setIcon(beautify_icon_63f73d8609d824f82ebb4e4c20c0822f);
+        
+    
+            marker_834a408cd88976e8f94aab87742e9ec2.bindTooltip(
+                `<div>
+                     Meitlibrunnen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_913883e69e3d50c155472e0d08cf6ba5 = L.marker(
+                [47.55566697212522, 8.89870943879978],
+                {}
+            ).addTo(marker_cluster_1561ac23a305aa8e4837fb7909a943cc);
+        
+    
+            var beautify_icon_85be6ed9cb85ac7823ed1be7ea95333a = new L.BeautifyIcon.icon(
+                {"backgroundColor": "blue", "borderColor": "blue", "borderWidth": 3, "iconShape": "marker", "innerIconStyle": "", "isAlphaNumericIcon": true, "spin": false, "text": 26, "textColor": "white"}
+            )
+            marker_913883e69e3d50c155472e0d08cf6ba5.setIcon(beautify_icon_85be6ed9cb85ac7823ed1be7ea95333a);
+        
+    
+            marker_913883e69e3d50c155472e0d08cf6ba5.bindTooltip(
+                `<div>
+                     Brunnen an der Promenade
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cluster_22ba1d0ea3331510902a9f2c36f5008a = L.markerClusterGroup(
+                {}
+            );
+            map_44aa42c90a4ed6283769da3b3d6054b8.addLayer(marker_cluster_22ba1d0ea3331510902a9f2c36f5008a);
+        
+    
+            var marker_d220bce34f3175ab285217f14295c477 = L.marker(
+                [47.555839999267974, 8.89696929293911],
+                {}
+            ).addTo(marker_cluster_22ba1d0ea3331510902a9f2c36f5008a);
+        
+    
+            var icon_9759237f287d75ecac6a3d837956f72d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d220bce34f3175ab285217f14295c477.setIcon(icon_9759237f287d75ecac6a3d837956f72d);
+        
+    
+            marker_d220bce34f3175ab285217f14295c477.bindTooltip(
+                `<div>
+                     Stadtbrand 1788
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_427f6332f2051deed57aa0e2f063eb2a = L.marker(
+                [47.556621401215594, 8.897884737436092],
+                {}
+            ).addTo(marker_cluster_22ba1d0ea3331510902a9f2c36f5008a);
+        
+    
+            var icon_ba36bbc619d04577342f7c9429922680 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "fire", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_427f6332f2051deed57aa0e2f063eb2a.setIcon(icon_ba36bbc619d04577342f7c9429922680);
+        
+    
+            marker_427f6332f2051deed57aa0e2f063eb2a.bindTooltip(
+                `<div>
+                     Stadtbrand 1771
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var layer_control_f38c82718b52014a0b14681f414b9c9b = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_9edfc30547fccfcb3f195a92e923f92a,
+                },
+                overlays :  {
+                    "Geb\u00e4ude" : marker_cluster_f492e1e7e62a14cf587c5e48b4ce273f,
+                    "Brunnen" : marker_cluster_1561ac23a305aa8e4837fb7909a943cc,
+                    "Feuer" : marker_cluster_22ba1d0ea3331510902a9f2c36f5008a,
+                },
+            };
+            L.control.layers(
+                layer_control_f38c82718b52014a0b14681f414b9c9b.base_layers,
+                layer_control_f38c82718b52014a0b14681f414b9c9b.overlays,
+                {"autoZIndex": true, "collapsed": true, "position": "topright"}
+            ).addTo(map_44aa42c90a4ed6283769da3b3d6054b8);
+        
+</script>
+</html>
