@@ -1,5 +1,7 @@
 ## Map
-<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<a href="https://jpmou.github.io/Altstadtrundgang/index.html#schloss-frauenfeld" target="_parent">mehr Info</a>
+
+
 
 ## Beschreibung des Rundganges
 
