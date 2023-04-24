@@ -1,5 +1,7 @@
 ## Map
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+<iframe asr="map.html" height="500" width="500"></iframe>
+
 
 ## Beschreibung des Rundganges
 
