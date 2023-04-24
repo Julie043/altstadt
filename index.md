@@ -12,7 +12,7 @@
 1. [Schloss Frauenfeld](#schloss-frauenfeld)
 2. [Sämannsbrunnen](#sämannsbrunnen)
 3. [Postgebäude](#postgebäude)
-4.
+
     
   
 
