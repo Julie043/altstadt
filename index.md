@@ -3,7 +3,7 @@
 1. [Schloss Frauenfeld](#schloss-frauenfeld)
 2. [Sämannsbrunnen](#sämannsbrunnen)
 3. [Postgebäude](#postgebäude)
-4. 
+4.
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 
 
